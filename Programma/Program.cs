@@ -37,8 +37,25 @@ int SizeArray1(string [] str, int n)
     Console.WriteLine("размер итогового массива: " + n);//выводим размер итогового строчного массива
     return n;
 }
-
-
+// Описываем метод для создания итогово строчного массива
+string [] CreateArray1(string [] str, int n)
+{
+    string [] str1 = new string [n];
+    int i = 0;
+    int j = 0;
+    while (i < str.Length)
+    {
+        int si = str[i].Length;
+        if (si < 4)
+        {
+            str1[j] = str[i];
+            j = j + 1;
+        }
+    i++;
+    }
+    return str1;
+}
+// Ввод и примение в заявленных метода параметров от пользователя
 Console.WriteLine("Введите количество n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] str = CreateArray(n);
@@ -46,3 +63,5 @@ Console.WriteLine();
 ShowArray (str);
 Console.WriteLine();
 int n1 = SizeArray1(str, n);
+string[] str1 = CreateArray1(str, n1);
+ShowArray (str1);
