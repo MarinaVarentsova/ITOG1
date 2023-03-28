@@ -21,8 +21,28 @@ void ShowArray(string [] str)
     }        
     Console.WriteLine();
 }
+// Описываем метод для вычисления размера итогового строчного массива
+int SizeArray1(string [] str, int n)
+{
+    int i = 0;
+    while (i < str.Length)
+    {
+        int si = str[i].Length;
+        if (si > 3)
+        {
+            n = n - 1;
+        }
+    i++;
+    }
+    Console.WriteLine("размер итогового массива: " + n);//выводим размер итогового строчного массива
+    return n;
+}
+
 
 Console.WriteLine("Введите количество n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 string[] str = CreateArray(n);
+Console.WriteLine();
 ShowArray (str);
+Console.WriteLine();
+int n1 = SizeArray1(str, n);
